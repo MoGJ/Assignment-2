@@ -1,4 +1,4 @@
-package com.mycompany.nava_maven_assignment_1;
+package com.nava_maven_assignment_1;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
