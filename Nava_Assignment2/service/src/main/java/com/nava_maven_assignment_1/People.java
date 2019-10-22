@@ -12,6 +12,9 @@ import java.util.Collection;
  * @author Johnathan Nava
  */
 public class People {
+    
+    
+    
     private static String readURL(String urlString) throws Exception {
         BufferedReader reader = null;
         try {
@@ -32,7 +35,7 @@ public class People {
 
     }
 
-    public void jsonPull() throws Exception {
+    public Collection<Person> jsonPull() throws Exception {
         String jsonOrg = readURL("https://www.w3schools.com/angular/customers.php");
         String json = jsonOrg.replace("\"records\":", "");
 
@@ -60,10 +63,13 @@ public class People {
             System.out.println(person.Name + "\t" + person.City +
                     "\t" + person.Country);
         }
+        
+        return enums;
     }
 
     public static void main(String[] args) throws Exception {
         People peoples = new People();
-        peoples.jsonPull();
+        Collection<Person> persons = peoples.jsonPull();
+        
     }
 }
